@@ -10,9 +10,9 @@ public class TOTDQuitHandler implements Listener {
 	@EventHandler
 	public void onPlayerQuit(PlayerQuitEvent e) {
 		Player player = e.getPlayer();
-		if (TOTDJoinHandler.players.contains(player.getUniqueId())) {
+		if (TOTDJoinHandler.players.contains(player.getUniqueId()))
 			return;
-		} else
+		else
 			return;
 	}
 }
