@@ -4,8 +4,10 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
+import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
+import org.bukkit.World;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -34,19 +36,24 @@ public class TOTDJoinHandler implements Listener {
 	public void onPlayerJoin(PlayerJoinEvent e) {
 		Player player = e.getPlayer();
 		ItemStack old = player.getInventory().getItemInHand();
+		World kitpvpWorld = Bukkit.getWorld(""); // KitPvP World, just put the kitpvp world name inside the quotes (")
+		World practicepvpWorld = Bukkit.getWorld(""); // PracticePvP World, just put the practicepvp world name inside the quotes (")
 
-		if (!(players.contains(player.getUniqueId()))) {
-			players.add(player.getUniqueId());
-			giveBook(player, old);
-			new BukkitRunnable() {
-				@Override
-				public void run() {
-					sendPacket(player);
-					giveItemBack(player, old);
-					TOTDUtils.sendPlayerMessage(player, "&2You have recieved the Tip Of The Day book!");
-				}
-			}.runTaskLater(TOTD.plugin, 2L);
-			return;
+		if (player.getWorld() == kitpvpWorld || player.getWorld() == practicepvpWorld) {
+			if (!(players.contains(player.getUniqueId()))) {
+				players.add(player.getUniqueId());
+				giveBook(player, old);
+				new BukkitRunnable() {
+					@Override
+					public void run() {
+						sendPacket(player);
+						giveItemBack(player, old);
+						TOTDUtils.sendPlayerMessage(player, "&2You have recieved the Tip Of The Day book!");
+					}
+				}.runTaskLater(TOTD.plugin, 2L);
+				return;
+			} else
+				return;
 		} else
 			return;
 	}
