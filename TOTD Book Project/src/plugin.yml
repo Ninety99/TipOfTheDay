@@ -1,0 +1,6 @@
+name: TOTD
+main: me.NinetyNine.totd.TOTD
+version: 1.0
+author: NinetyNine
+depend: [ProtocolLib]
+description: A tip of the day!
