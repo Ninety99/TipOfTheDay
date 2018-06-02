@@ -36,8 +36,8 @@ public class TOTDJoinHandler implements Listener {
 	public void onPlayerJoin(PlayerJoinEvent e) {
 		Player player = e.getPlayer();
 		ItemStack old = player.getInventory().getItemInHand();
-		World kitpvpWorld = Bukkit.getWorld(""); // KitPvP World, just put the kitpvp world name inside the quotes (")
-		World practicepvpWorld = Bukkit.getWorld(""); // PracticePvP World, just put the practicepvp world name inside
+		World kitpvpWorld = Bukkit.getWorld("world"); // KitPvP World, just put the kitpvp world name inside the quotes (")
+		World practicepvpWorld = Bukkit.getWorld("world"); // PracticePvP World, just put the practicepvp world name inside
 														// the quotes (")
 
 		if (player.getWorld() == kitpvpWorld || player.getWorld() == practicepvpWorld) {
