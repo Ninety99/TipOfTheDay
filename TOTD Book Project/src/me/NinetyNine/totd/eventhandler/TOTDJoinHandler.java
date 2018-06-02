@@ -37,7 +37,8 @@ public class TOTDJoinHandler implements Listener {
 		Player player = e.getPlayer();
 		ItemStack old = player.getInventory().getItemInHand();
 		World kitpvpWorld = Bukkit.getWorld(""); // KitPvP World, just put the kitpvp world name inside the quotes (")
-		World practicepvpWorld = Bukkit.getWorld(""); // PracticePvP World, just put the practicepvp world name inside the quotes (")
+		World practicepvpWorld = Bukkit.getWorld(""); // PracticePvP World, just put the practicepvp world name inside
+														// the quotes (")
 
 		if (player.getWorld() == kitpvpWorld || player.getWorld() == practicepvpWorld) {
 			if (!(players.contains(player.getUniqueId()))) {
@@ -60,11 +61,14 @@ public class TOTDJoinHandler implements Listener {
 
 	public void giveBook(Player player, ItemStack old) {
 		List<String> pages = new ArrayList<String>();
-		String hackusating = "&cDo not hackusate(accusing a player of hacking)! This will lead to a 6 hour mute. To report the specific player, use /report <player> <reason>.";
+		//English
+		String hackusating = "&cDo not hackusate(accusing a player of hacking)! This will lead to a 6 hour mute."
+				+ " To report the specific player, use /report <player> <reason>.";
+		String gcStaff = "&8- GuildCraft Staff";
 		String string = "&b-=-=-=-=-=-=-=-=-\n", string2 = "&3Tip Of The Day:\n", spaces = "\n";
 
 		pages.add(ChatColor.translateAlternateColorCodes('&',
-				string + string2 + string + "&c" + hackusating + spaces + string + spaces + "&8- GuildCraft Staff"));
+				string + string2 + string + hackusating + spaces + string + spaces + gcStaff));
 
 		BookMeta meta = (BookMeta) book.getItemMeta();
 		meta.setPages(pages);
