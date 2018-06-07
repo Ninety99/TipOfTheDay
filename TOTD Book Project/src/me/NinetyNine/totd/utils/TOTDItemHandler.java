@@ -14,10 +14,10 @@ import me.NinetyNine.totd.TOTD;
 
 public class TOTDItemHandler implements Listener {
 
-	public static ItemStack book = new ItemStack(Material.WRITTEN_BOOK);
-
 	public static void giveBook(Player player, ItemStack old) {
 		List<String> pages = new ArrayList<String>();
+		
+		ItemStack book = new ItemStack(Material.WRITTEN_BOOK);
 
 		String gcStaff = "&8- GuildCraft Staff";
 		String string = "&b-=-=-=-=-=-=-=-=-\n" + "&r", string2 = "&3Tip Of The Day:\n", spaces = "\n";
@@ -38,6 +38,5 @@ public class TOTDItemHandler implements Listener {
 
 	public static void giveItemBack(Player player, ItemStack old) {
 		player.getInventory().setItemInHand(old);
-		player.getInventory().addItem(book);
 	}
 }
