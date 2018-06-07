@@ -4,3 +4,11 @@ version: 1.0
 author: NinetyNine
 depend: [ProtocolLib]
 description: A tip of the day!
+commands:
+  totd:
+    usage: /<command>
+    description: Opens the book.
+  gctotd:
+    usage: /<command>
+    description: Commands for admins.
+    permissions: totd.admin
