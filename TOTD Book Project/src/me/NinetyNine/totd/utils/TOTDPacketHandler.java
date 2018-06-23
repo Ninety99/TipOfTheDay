@@ -9,9 +9,13 @@ import com.comphenix.protocol.events.PacketContainer;
 import com.comphenix.protocol.utility.MinecraftReflection;
 
 import io.netty.buffer.ByteBuf;
-import io.netty.buffer.Unpooled;	
+import io.netty.buffer.Unpooled;
 
-public class TOTDPacketHandler implements Listener  {
+public class TOTDPacketHandler implements Listener {
+
+	/*
+	 * Credits to a guy from bukkit dev site, forgot his name.F
+	 */
 
 	public static void sendPacket(Player player) {
 		try {
